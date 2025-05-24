@@ -1,0 +1,23 @@
+@use "theme.scss" as theme;
+@use "var.scss" as var;
+
+.about-me {
+  @include var.widget;
+  padding: 5px 20px;
+  position: relative;
+  top: 15px;
+  .about-me-start {
+    text-align: center;
+    text-shadow: 0 0 4px #fff;
+  }
+  .about-me-second {
+    text-align: center;
+  }
+  .about-me-third {
+    text-align: center;
+  }
+  .about-me-content {
+    display: flex;
+    vertical-align: middle;
+  }
+}

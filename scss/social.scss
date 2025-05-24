@@ -1,0 +1,28 @@
+@use "theme.scss" as theme;
+@use "var.scss" as var;
+
+.social-media {
+  @include var.widget;
+  padding: 5px 20px;
+  position: relative;
+  top: 15px;
+  .social-media-start {
+    text-shadow: 0 0 4px #fff;
+    text-align: center;
+  }
+
+  .social-links {
+    color: theme.$foreground;
+    box-shadow: NONE;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 5px;
+
+    .sl-github {
+      @include var.links;
+    }
+    .sl-instagram {
+      @include var.links;
+    }
+  }
+}

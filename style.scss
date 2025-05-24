@@ -1,0 +1,78 @@
+@use "scss/theme.scss" as theme;
+@use "scss/var.scss" as var;
+
+@forward "scss/home.scss";
+@forward "scss/social.scss";
+@forward "scss/projects.scss";
+@forward "scss/credits.scss";
+
+body {
+  font-family: "Ubuntu";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: theme.$background;
+  margin: 5px;
+}
+
+.profile {
+  text-align: center;
+  .pfp {
+    width: 230px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0px 3px 3px #000;
+    position: relative;
+    top: 15px;
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+  }
+  .name {
+    @include var.widget($border: false);
+    padding: 5px;
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+  }
+}
+
+.displays {
+  background: theme.$background-alt;
+  color: theme.$foreground;
+  border-radius: var.$radius;
+  padding: 5px 15px;
+
+  .displays-link {
+    text-decoration: none !important;
+    font-weight: bold;
+    margin: 0 15px;
+    &:visited {
+      color: theme.$foreground;
+      border: NONE;
+      outline: NONE;
+    }
+    &:hover {
+      text-shadow: 0 0 4px #fff;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+a {
+  color: inherit !important;
+  &:focus {
+    color: theme.$primary !important;
+  }
+}
+
+@media (max-width: 600px) {
+  @include var.phones;
+}
+
+@media (max-width: 320px) {
+  @include var.phones($small: true);
+}
